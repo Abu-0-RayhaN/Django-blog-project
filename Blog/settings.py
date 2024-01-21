@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-c@xy^*w7npsf1uaaee!$wgbvj(7@p%*@ni6%*#v%ddpwhcc@z*
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'posts',
     'crispy_forms',
     'tinymce'
-    
+
 ]
 
 MIDDLEWARE = [
@@ -121,12 +121,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_DIR=os.path.join(BASE_DIR, 'static')
-MEDIA_DIR=os.path.join(BASE_DIR,'media')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = [STATIC_DIR]
-MEDIA_URL='/media/'
-MEDIA_ROOT=MEDIA_DIR
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = MEDIA_DIR
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
