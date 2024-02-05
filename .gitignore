@@ -1,3 +1,43 @@
 myenv/
 aboutThisProject.txt
 # Python
+# Byte-compiled / optimized / DLL files
+**/__pycache__/
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Caches
+# Virtual environment
+venv/
+.env/
+
+# Logs
+*.log
+
+# Development and runtime artifacts
+*.pyc
+db.sqlite3
+media/
+
+# Ignore Django generated files
+*.pyc
+*.pyo
+__pycache__
+db.sqlite3
+media/
+*.pyc
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore PyCharm settings
+.idea/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Docker related files
+Dockerfile
+docker-compose.yml

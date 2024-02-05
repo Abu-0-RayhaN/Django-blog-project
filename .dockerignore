@@ -1,0 +1,27 @@
+# Ignore virtual environment
+myenv/
+
+# Ignore development artifacts
+*.log
+db.sqlite3
+media/
+
+# Ignore Python bytecode files
+**/__pycache__/
+
+# Ignore VS Code and PyCharm settings
+.vscode/
+.idea/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Docker related files
+Dockerfile
+docker-compose.yml
+
+# Ignore local configuration
+settings_local.py
+
+# Ignore aboutThisProject.txt (assuming it's specific to local documentation)
+aboutThisProject.txt
