@@ -56,7 +56,7 @@ def bloglist(request):
         blog = Blog.get_all_products_by_id(categoryID)
     else:
         blog = Blog.objects.all()
-    paginator = Paginator(blog, 2)
+    paginator = Paginator(blog, 3)
     page_number = request.GET.get('page')
     blogFinal = paginator.get_page(page_number)
     result = None

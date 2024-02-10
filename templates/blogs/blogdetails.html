@@ -11,7 +11,7 @@
   </style>
 {% endblock %}
 {% block content %}
-<div class="pl-5 pr-5">
+<div class=" px-2 px-lg-5">
     <div class="row">
         <div class="col-lg-4 col-md-3"></div>
         <div class="col-lg-4 col-md-6 pt-2" style="z-index:0.5 ;">
@@ -30,8 +30,9 @@
  <div class="row">
     
     <!--Blog row-->
-    <div class="col-lg-9">
-        <h2 style="font-family:monospace;">{{blog.blog_title|capfirst}}</h2>
+    <div class="col-md-8">
+        <h2 style="font-size:40px;">{{blog.blog_title|capfirst}}</h2>
+       <div class="font-monospace text-sm-center" style="font-size: 15px;">
         <i class="fa fa-solid fa-clock"></i>{{blog.publish_date|date:'d-m-Y hA'}}
         <i class="fa fa-solid fa-user"></i>&nbsp;{{blog.author}}.
         <i class="fa fa-solid fa-thumbs-up"></i>&nbsp;{{blog.liked_blog.count}}&nbsp;Likes.
@@ -39,6 +40,7 @@
         <i class="fa fa-solid fa-clock"></i>{{blog.update_date|date:'d-m-Y hA'}}(Updated).
         <i class="fa fa-solid fa-eye"></i>&nbsp;{{blog.view_count}}&nbsp;views<p></p>
         {{count}}
+       </div>
         <img src="/media/{{blog.blog_image}}" alt="{{blog.blog_title}}" title="{{blog.blog_title}}" width="100%" height="500px">
         <p style="font-family:monospace;">{{blog.blog_content|capfirst | linebreaks}}</p><hr>
         <!---showing like and dislike button-->
@@ -147,10 +149,10 @@
     
     
     <!--profile and adds row-->
-    <div class="col-lg-3">
+    <div class="col-md-4">
         <div class="mt-5 " style="border-left:3px solid black;" >
             {% if blog.author.user_profile.profile_pic %}
-                <img src="{{blog.author.user_profile.profile_pic.url}}" height="70px" width="60px" class="rounded-circle mx-2  pl-1"><br><br>
+                <img src="{{blog.author.user_profile.profile_pic.url}}" height="65px" width="60px" class="rounded-circle mx-2  pl-1"><br><br>
                 {% else %}
                 <img src="/media/profile_pics/avater.jpg/" height="70px" width="60px" class="rounded-circle mx-2 pl-1"><br><br>
                  {% endif %}
@@ -159,7 +161,7 @@
         </div><br><br>
         <h3>More Contents</h3><hr>
         {% for Cat in CategoryBlog %}
-        <p style="float:right;">{{Cat.publish_date}}</p><br><br>
+        <p style="float:right;">{{Cat.publish_date}}</p><br>
         <h3 style="font-family: 'Arial Narrow Bold', sans-serif; font-size:20px;">{{Cat.blog_title|capfirst|truncatewords:30}}</h3><a href="{% url 'blog_details' slug=Cat.slug %}">Read More</a>
         <br>
         <h6> @&nbsp;{{Cat.author}}</h6>
