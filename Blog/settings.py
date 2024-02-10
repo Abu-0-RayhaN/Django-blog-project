@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'authentication',
     'posts',
     'crispy_forms',
-    'tinymce'
 
 ]
 
