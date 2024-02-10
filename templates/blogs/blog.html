@@ -48,16 +48,18 @@
   {% if blog %}
     {% if not result %}
        {% for blog in blog %}
-         <div class="row" style="background-color:#f5f7fa; border-radius:20px;">
-            <div class="col-lg-6">
+         <div class="row" >
+          <div class="col-lg-2"></div>
+            <div class="col-lg-8">
                 <img src="/media/{{blog.blog_image}}" alt="{{blog.blog_title}}" title="" width="100%" height="300px">
-            </div>
-            <div class="col-lg-4">
                 <p style="float:right;">{{blog.publish_date}}</p><br><br>
-                <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{blog.blog_title|capfirst|truncatewords:30}}</h3><a href="{% url 'blog_details' blog.slug %}">Read More</a>
-                <br>
-                <h6> @&nbsp;{{blog.author}}</h6>
-            </div>   
+                <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{blog.blog_title|capfirst|truncatewords:30}}</h3>
+                <p style="font-family: sans-serif;">{{blog.blog_content|capfirst|truncatewords:30}}
+                <a href="{% url 'blog_details' blog.slug %}">Read More</a>
+                </p>
+                <h6>@{{blog.author}}</h6>
+              </div>
+            <div class="col-lg-2"></div>
          </div>
        {% endfor %}
     {% else %}
@@ -69,7 +71,9 @@
             </div>
             <div class="col-lg-4">
                 <p style="float:right;">{{blog.publish_date}}</p><br><br>
-                <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{blog.blog_title|capfirst|truncatewords:30}}</h3><a href="{% url 'blog_details' blog.slug %}">Read More</a>
+                <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{blog.blog_title|capfirst|truncatewords:30}}</h3>
+                <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{blog.blog_content | truncatewords:30}}</h3>
+                <a href="{% url 'blog_details' blog.slug %}">Read More</a>
                 <br>
                 <h6> @&nbsp;{{blog.author}}</h6>
             </div>   
@@ -78,7 +82,9 @@
     {% endif %}
     <!--pagination Starts-->
     {% if not result %}<!--Just don't want to show pagination for search result. because there won't be to much article but if then copy the pagination part and paste for result. and write the logic that pass from view as for blog-->
-    <nav aria-label="..." class="my-5" style="background-image: linear-gradient(to right,#52e66b,#b46cd8);">
+    <nav aria-label="..." class="my-5" 
+    style="background-image: linear-gradient(to right,#52e66b,#b46cd8);"
+    >
       <ul class="pagination button" style="padding-left: 25%;">
         <li class="page-item mt-1 text-white">{{blog}}</li>
         {% if blog.has_previous %}
